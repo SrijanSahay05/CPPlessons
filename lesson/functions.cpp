@@ -28,3 +28,5 @@ int main () {
 void add(int a, int b) {
     cout << a + b << endl;
 }
+
+//variables in functions work as a stack. the top most / the most recently called function is pushed to the top of the stack and when the funciton completes the execution of the stack the function gets popped out

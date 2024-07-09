@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std; 
 
+// not the most efficient way of calculating nCr
 int factorial(int num){
     int factorial = 1;
     while (num > 1){

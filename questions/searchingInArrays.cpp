@@ -1,13 +1,14 @@
 #include <iostream>
 
 using namespace std; 
+// linear search : O(n) linear time complexity
 bool keyCheck(int key, int arrayValue){
     if(key == arrayValue){
         return true;
     }
     return false;
 }
-int main(){
+void linearSearch(){
     int n; 
     int key;
     bool notfound = true;
@@ -29,6 +30,10 @@ int main(){
     if(notfound){
         cout << "NO MATCH " <<endl;
     }
-    return 0;
-
 }
+int main(){
+    linearSearch();
+    return 0;
+}
+
+//binary search (faster than linear) ##ARRAYS NEED TO BE SORTED 

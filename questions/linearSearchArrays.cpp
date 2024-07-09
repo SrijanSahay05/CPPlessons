@@ -1,15 +1,6 @@
 #include <iostream>
 using namespace std; 
 // linear search : O(n) linear time complexity ##OPTIMISE THE CODE LATER
-int linearSearch(int n, int numArray[], int key){
-    for(int i=0; i<n; i++){
-        if(numArray[i]==key){
-            cout << "Key Postion: " << i+1 <<" & Key Index: " << i << endl;
-            return i;
-        }
-    }
-    return -1;
-}
 int main(){
     int n; 
     int key;
@@ -23,6 +14,14 @@ int main(){
     }
     cout<< "Enter the key to search: " ;
     cin >> key ;
-    cout << linearSearch(n, numArray[], key);
+    for(int i=0; i<n; i++){
+        if(numArray[i]==key){
+            cout << "Key Postion: " << i+1 <<" & Key Index: " << i << endl;
+            notfound = false; 
+        }
+    }
+    if(notfound){
+        cout << "NO MATCH " <<endl;
+    }
     return 0;
 }

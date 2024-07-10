@@ -14,12 +14,13 @@ int binarySearch(int n, int numArray[], int key){
             endIndex = mid - 1;
         }
         else {
-            endIndex = mid + 1;
+            startIndex = mid + 1;
         }
     }
     return -1;
     
 }
+//this exits after finding the very first keymatch. questions/linearSearchArrays.cpp is the goto for multiple keymatch
 
 int linearSearch (int n, int numArray[], int key){
     for(int i=0; i<n; i++){
@@ -31,6 +32,7 @@ int linearSearch (int n, int numArray[], int key){
 
     return 0;
 }
+
 int main(){
     int n; 
     int key; 

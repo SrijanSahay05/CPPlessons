@@ -52,6 +52,30 @@ void bubbleSortDescending(int n, int numArray[]){
     }
 }
 
+//INSERTION SORT 
+void insertionSortAscending(int n, int numArray[]){
+    for(int i=1; i<n; i++){
+        int current = numArray[i];
+        int j = i - 1;
+        while (numArray[j]>current && j>=0){
+            numArray[j+1] = numArray[j];
+            j--;
+        }
+        numArray[j+1] = current;
+    }
+}
+void insertionSortDescending(int n, int numArray[]){
+    for(int i=1; i<n; i++){
+        int current = numArray[i];
+        int j = i - 1;
+        while (numArray[j]<current && j>=0){
+            numArray[j+1] = numArray[j];
+            j--;
+        }
+        numArray[j+1] = current;
+    }
+}
+
 
 void arrayPrint(int n, int numArray[]){
     for (int i=0; i<n; i++){
@@ -72,12 +96,14 @@ int main(){
     arrayPrint(n, numArray);
 
     // selectionSortAscending(n, numArray);
-    bubbleSortAscending(n, numArray);
+    // bubbleSortAscending(n, numArray);
+    insertionSortAscending(n, numArray);
     cout << endl << "Asceding order sorted array: " ;
     arrayPrint(n, numArray);
 
-    // selectionSortDescending(n, numArray);
-    bubbleSortDescending(n, numArray);
+    // // selectionSortDescending(n, numArray);
+    // bubbleSortDescending(n, numArray);
+    insertionSortDescending(n, numArray);
     cout << endl << "Descending order sorted array:  ";
     arrayPrint(n, numArray);
 

@@ -39,13 +39,13 @@ void longestArithmaticSubarray(int numOfElements, int numArray[]){ //not working
     int previousLength = 0; 
     int counter =1; 
     for(int i=1; i<numOfElements;i++){
-        if(numArray[i]==(numArray[i-1]+numArray[i+1])/2){
+        if((numArray[i-1]+numArray[i+1])%2 == 0 && numArray[i]==(numArray[i-1]+numArray[i+1])/2){
             counter++;
             cout << "Counter ++ " << endl;
         }
         else{
-            counter = 1;
-            cout << "Counter = 1" << endl;
+            counter = 0;
+            cout << "Counter = 0" << endl;
         } 
         if(counter > previousLength){
             previousLength = counter;

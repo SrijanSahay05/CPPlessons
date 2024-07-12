@@ -35,23 +35,39 @@ void sumOfSubArrays(int numOfElements, int numArray[]){
     }
 }
 
+
 void longestArithmaticSubarray(int numOfElements, int numArray[]){ //not working for {1,2,3,2,1} type input
     int previousLength = 0; 
     int counter =1; 
     for(int i=1; i<numOfElements;i++){
         if((numArray[i-1]+numArray[i+1])%2 == 0 && numArray[i]==(numArray[i-1]+numArray[i+1])/2){
             counter++;
-            cout << "Counter ++ " << endl;
+            // cout << "Counter ++ " << endl;
         }
         else{
             counter = 0;
-            cout << "Counter = 0" << endl;
+            // cout << "Counter = 0" << endl;
         } 
         if(counter > previousLength){
             previousLength = counter;
         }
     }
     cout << "The longest arithmatic subarray is of " << previousLength + 1 <<" elements" <<endl;
+}
+
+void recordBreakerDays(int numOfDays, int ticketSales[] ){
+    int maxSales = 0; 
+    int numRecordDays = 0;
+    for (int i=0; i<numOfDays; i++){
+        if(ticketSales[i]>maxSales){
+            maxSales = ticketSales[i];
+            if(ticketSales[i]>ticketSales[i+1] && ticketSales[i==maxSales]){
+                // cout << "day: " << i << " value: " << ticketSales[i] <<endl;
+                numRecordDays++;
+            }
+        } 
+    }
+    cout << "Record Breaking Days: " << numRecordDays; 
 }
 
 int main(){
@@ -65,7 +81,7 @@ int main(){
     for(int i=0; i<numOfElements; i++){
         cin >> numArray[i];
     }
-    longestArithmaticSubarray(numOfElements, numArray);
+    recordBreakerDays(numOfElements, numArray);
     
     
     cout << endl;

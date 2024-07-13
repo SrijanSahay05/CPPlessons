@@ -36,11 +36,11 @@ void sumOfSubArrays(int numOfElements, int numArray[]){
 }
 
 
-void longestArithmaticSubarray(int numOfElements, int numArray[]){ //not working for {1,2,3,2,1} type input
+void longestArithmaticSubarray(int numOfElements, int numArray[]){ //not working for {1,2,3,2,1} type input #fixed
     int previousLength = 0; 
     int counter =1; 
     for(int i=1; i<numOfElements;i++){
-        if((numArray[i-1]+numArray[i+1])%2 == 0 && numArray[i]==(numArray[i-1]+numArray[i+1])/2){
+        if((numArray[i-1]+numArray[i+1])%2 == 0 && numArray[i]==(numArray[i-1]+numArray[i+1])/2){ // had to check if a+c/2 is an inteeger or not 
             counter++;
             // cout << "Counter ++ " << endl;
         }
@@ -70,6 +70,18 @@ void recordBreakerDays(int numOfDays, int ticketSales[] ){
     cout << "Record Breaking Days: " << numRecordDays; 
 }
 
+int indexRepeating(int numOfElements, int numArray[]){
+    for (int i=0; i<numOfElements; i++){
+        for (int j=i+1; j<numOfElements; j++){
+            if (numArray[i]==numArray[j]){
+                cout << "Lowest Repeated Index: "<< i << endl;
+                return 0;
+            }
+        }
+    }
+    cout << "No Repeating Values " << endl;
+    return 0;
+}
 int main(){
     int numOfElements; 
     int* numArray = new int[numOfElements];
@@ -81,7 +93,7 @@ int main(){
     for(int i=0; i<numOfElements; i++){
         cin >> numArray[i];
     }
-    recordBreakerDays(numOfElements, numArray);
+    indexRepeating(numOfElements, numArray);
     
     
     cout << endl;

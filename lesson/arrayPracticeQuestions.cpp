@@ -70,18 +70,39 @@ void recordBreakerDays(int numOfDays, int ticketSales[] ){
     cout << "Record Breaking Days: " << numRecordDays; 
 }
 
-int indexRepeating(int numOfElements, int numArray[]){
-    for (int i=0; i<numOfElements; i++){
-        for (int j=i+1; j<numOfElements; j++){
-            if (numArray[i]==numArray[j]){
-                cout << "Lowest Repeated Index: "<< i << endl;
-                return 0;
-            }
-        }
+void indexRepeating(int numOfElements, int numArray[]){
+    // //O(n^2) try to make it O(n) or O(logn)
+    //  for (int i=0; i<numOfElements; i++){
+    //     for (int j=i+1; j<numOfElements; j++){
+    //         if (numArray[i]==numArray[j]){
+    //             cout << "Lowest Repeated Index: "<< i << endl;
+    //             return 0;
+    //         }
+    //     }
+    // }
+    // cout << "No Repeating Values " << endl;
+    // return 0;
+    int minIndex = INT_MAX; 
+    int* tempArray = new int[1000001];
+
+    //Temp Array Initialisation
+    for(int i=0; i<=1000001; i++){
+        tempArray[i] = -1;
     }
-    cout << "No Repeating Values " << endl;
-    return 0;
+   
+   //Iterating over all the values
+    for (int i=0; i<numOfElements; i++){
+        if (tempArray[numArray[i]] == -1){
+            tempArray[numArray[i]]=i;
+        }
+        else{
+            minIndex = min(minIndex, tempArray[numArray[i]]);
+            tempArray[numArray[i]] = minIndex;
+        }   
+    }
+    cout  << "Min Index: " << minIndex;
 }
+
 int main(){
     int numOfElements; 
     int* numArray = new int[numOfElements];

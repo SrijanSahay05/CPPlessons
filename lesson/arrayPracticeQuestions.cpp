@@ -82,6 +82,8 @@ void indexRepeating(int numOfElements, int numArray[]){
     // }
     // cout << "No Repeating Values " << endl;
     // return 0;
+    
+    //O(n) Time Complexity
     int minIndex = INT_MAX; 
     int* tempArray = new int[1000001];
 
@@ -103,6 +105,32 @@ void indexRepeating(int numOfElements, int numArray[]){
     cout  << "Min Index: " << minIndex;
 }
 
+int subArrayWithGivenSum(int numOfElements, int numArray[]){
+    //take a look at the sliding window approach on gfg after doing vectors
+    int sum; 
+    cout << "Enter the Sum: " ; 
+    cin >> sum;
+    
+    int startPointer = 0; 
+    int endPointer = 0;
+    int currentSum = 0;
+    
+    while(currentSum < sum && endPointer <=numOfElements){
+        currentSum += numArray[endPointer];
+        endPointer++;
+    }
+    while(currentSum > sum && startPointer <=numOfElements){
+        currentSum -= numArray[startPointer];
+        startPointer++;
+    }
+    if(currentSum != sum){
+        cout << "No Such Sub-Array Found" << endl;
+        return 0;
+    }
+    cout << "StartPointer: " << startPointer << " EndPointer: " << endPointer-1;
+    return 0;
+}
+
 int main(){
     int numOfElements; 
     int* numArray = new int[numOfElements];
@@ -114,9 +142,7 @@ int main(){
     for(int i=0; i<numOfElements; i++){
         cin >> numArray[i];
     }
-    indexRepeating(numOfElements, numArray);
-    
-    
+    subArrayWithGivenSum(numOfElements, numArray);
     cout << endl;
     return 0;
 }

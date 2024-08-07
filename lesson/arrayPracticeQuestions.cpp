@@ -151,6 +151,8 @@ int smallestMissingNumber (int numOfElements, int numArray[]){
     return 0;
 }
 
+
+
 int main(){
     int numOfElements; 
     int* numArray = new int[numOfElements];

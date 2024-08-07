@@ -106,7 +106,7 @@ void indexRepeating(int numOfElements, int numArray[]){
 }
 
 int subArrayWithGivenSum(int numOfElements, int numArray[]){
-    //take a look at the sliding window approach on gfg after doing vectors
+    //take a look at the sliding window approach on gfg after doing vectors and try to implement with your own.
     int sum; 
     cout << "Enter the Sum: " ; 
     cin >> sum;
@@ -131,6 +131,26 @@ int subArrayWithGivenSum(int numOfElements, int numArray[]){
     return 0;
 }
 
+
+int smallestMissingNumber (int numOfElements, int numArray[]){
+    int* positiveSortedArray = new int[100001];
+    for (int i=0; i<=100001; i++){
+        positiveSortedArray[i] = 0; 
+    }
+    for (int i=0; i<numOfElements; i++){
+        if (numArray[i] >=0){
+            positiveSortedArray[numArray[i]] = 1;
+        }
+    }
+    for (int i=0; i<=100001; i++){
+        if (positiveSortedArray[i]==0){
+            cout << "The missing number is:  " << i << endl; 
+            return 0;
+        }
+    }
+    return 0;
+}
+
 int main(){
     int numOfElements; 
     int* numArray = new int[numOfElements];
@@ -142,7 +162,8 @@ int main(){
     for(int i=0; i<numOfElements; i++){
         cin >> numArray[i];
     }
-    subArrayWithGivenSum(numOfElements, numArray);
+
+    smallestMissingNumber(numOfElements, numArray);
     cout << endl;
     return 0;
 }

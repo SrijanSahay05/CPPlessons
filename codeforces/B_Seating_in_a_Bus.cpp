@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std; 
 int run(){
-int numPassenger; 
+    int numPassenger; 
     int* seats = new int[numPassenger];
     cin >> numPassenger;
     for(int i=0; i<numPassenger; i++){
@@ -31,4 +31,12 @@ int main(){
     for (int i=0; i<testCases; i++){
         run();
     }
+}
+
+#include <iostream>
+using namespace std; 
+int main(){
+    int numPass; 
+    cin >> numPass; 
+
 }

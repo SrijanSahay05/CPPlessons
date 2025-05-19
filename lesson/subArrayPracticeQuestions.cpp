@@ -21,19 +21,22 @@ void subArrayPrinting(int numOfElements, int numArray[]){
 }
 
 void maxSumSubArray(int numOfElements, int numArray[]){
-    // Using Brute force // O(n^3)
-    int MaxSum = INT_MIN;
-    for(int i=0; i<numOfElements; i++){
-        for(int j=i; j<numOfElements; j++){
-            int sum = 0;
-            for(int k=i; k<=j; k++){
-                sum += numArray[k];
-            }
-            MaxSum = max(sum, MaxSum);
+    // // Using Brute force // O(n^3)
+    // int MaxSum = INT_MIN;
+    // for(int i=0; i<numOfElements; i++){
+    //     for(int j=i; j<numOfElements; j++){
+    //         int sum = 0;
+    //         for(int k=i; k<=j; k++){
+    //             sum += numArray[k];
+    //         }
+    //         MaxSum = max(sum, MaxSum);
             
-        }
-    }
-    cout << "The Maximum Sum for all sub arrays: " << MaxSum;
+    //     }
+    // }
+    // cout << "The Maximum Sum for all sub arrays: " << MaxSum;
+
+    //Cumulative Sum-Array
+    
 }
 
 int main(){
